@@ -1,0 +1,12 @@
+﻿{
+  "manifest_version":2,
+  "name":"Focus",
+  "version":"1.0",
+  "description":"Removes content from Youtube to keep us Focused.",
+  "content_scripts":[
+  {
+    "matches":["https://www.youtube.com/"],
+    "js":["./main.js"]
+  }]
+
+}

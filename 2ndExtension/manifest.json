@@ -1,0 +1,12 @@
+﻿{
+  "manifest_version":2,
+  "name":"No-Meme",
+  "version":"1.0",
+  "description":"Removes content from my favorite meme dump to keep me Focused.",
+  "content_scripts":[
+  {
+    "matches":["https://www.funpic.us/"],
+    "js":["./main.js"]
+  }]
+
+}
