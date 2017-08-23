@@ -1,3 +1,4 @@
-﻿var content = document.getElementById('content');
-content.parentNode.removeChild(content);
-// this does not work for class content
+﻿let head = document.querySelector("head");
+let style = document.createElement("style");
+style.append(".content {display:none;}");
+head.append(style);
