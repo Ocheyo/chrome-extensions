@@ -5,7 +5,7 @@
   "description":"Katas on CodeWars by g964 and GiacomoSorbi are simply too frustrating before breakfast, this will filter them out between 5 and 10am",
   "content_scripts":[
   {
-    "matches":["https://www.CodeWars.com/"],
+    "matches":["https://www.CodeWars.com/*"],
     "js":["./main.js"]
   }]
 
