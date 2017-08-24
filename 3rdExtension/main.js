@@ -9,11 +9,18 @@ const onListPage = () => {
 	return here.test(/\/kata\/(latest|search)/); 
 };
 
-const milisecondsUntilRefresh = () => {
-  const d = new Date(); 
-  const secs = (10 - (d.getHours()) - 1) * 60 + (60 - d.getMinutes()) * 60 * 1000; 
-  if (!isMorning()) 
+const millisecondsUntilRefresh = () => {
+  const d = new Date();
+  if (d.getHours() < 10) { 
+    const secs = (10 - (d.getHours() - 1)) * 60 + (60 - d.getMinutes()) * 60 * 1000; 
+  } else {
+    const secs = (24 - (d.getHours() + 4)) * 60 + (60 - d.getMinutes()) * 60 * 1000;
+  }
   return secs;
+};
+
+const pageRefresh = () => {
+  if (onListPage()) window.location.reload;
 };
 
 const unwanted = ['https://www.codewars.com/users/g964', 
@@ -34,4 +41,5 @@ const beforeBreakfast = () => {
 
 beforeBreakfast();
 document.onscroll = beforeBreakfast;
-setTimeout(window.location.reload, milisecondsUntilRefresh());
+setTimeout(pageRefresh, millisecondsUntilRefresh());
+
